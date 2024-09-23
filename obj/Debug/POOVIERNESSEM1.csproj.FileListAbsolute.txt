@@ -1,0 +1,7 @@
+C:\Users\Gael Campuzano\source\repos\POOVIERNESSEM1\bin\Debug\POOVIERNESSEM1.exe.config
+C:\Users\Gael Campuzano\source\repos\POOVIERNESSEM1\bin\Debug\POOVIERNESSEM1.exe
+C:\Users\Gael Campuzano\source\repos\POOVIERNESSEM1\bin\Debug\POOVIERNESSEM1.pdb
+C:\Users\Gael Campuzano\source\repos\POOVIERNESSEM1\obj\Debug\POOVIERNESSEM1.csproj.AssemblyReference.cache
+C:\Users\Gael Campuzano\source\repos\POOVIERNESSEM1\obj\Debug\POOVIERNESSEM1.csproj.CoreCompileInputs.cache
+C:\Users\Gael Campuzano\source\repos\POOVIERNESSEM1\obj\Debug\POOVIERNESSEM1.exe
+C:\Users\Gael Campuzano\source\repos\POOVIERNESSEM1\obj\Debug\POOVIERNESSEM1.pdb
