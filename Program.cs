@@ -11,27 +11,42 @@ namespace POOVIERNESSEM1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ingrese la operación que quiere usar:");
-            Console.WriteLine("1. Número mayor o menor");
-            Console.WriteLine("2. Números primos");
-            string oper = Console.ReadLine();
-
-            switch (oper)
+            string oper;
+            do
             {
-                case "1":
-                    ProcesarNumeros();
-                    break;
-                case "2":
-                    ProcesarPrimos();
-                    break;
-                default:
-                    Console.WriteLine("Opción inválida.");
-                    break;
-            }
+                Console.Clear(); // Limpia la consola antes de mostrar el menú
+                Console.WriteLine("Ingrese la operación que quiere usar:");
+                Console.WriteLine("1. Número mayor o menor");
+                Console.WriteLine("2. Números primos");
+                Console.WriteLine("3. Imprimir solo el número mayor");
+                Console.WriteLine("4. Salir");
+                oper = Console.ReadLine();
 
-            // Mantener la consola abierta hasta que el usuario presione una tecla
-            Console.WriteLine("\nPresione cualquier tecla para salir...");
-            Console.ReadKey();
+                switch (oper)
+                {
+                    case "1":
+                        ProcesarNumeros();
+                        break;
+                    case "2":
+                        ProcesarPrimos();
+                        break;
+                    case "3":
+                        ImprimirNumeroMayor();
+                        break;
+                    case "4":
+                        Console.WriteLine("Saliendo del programa...");
+                        break;
+                    default:
+                        Console.WriteLine("Opción inválida.");
+                        break;
+                }
+
+                if (oper != "4")
+                {
+                    Console.WriteLine("\nPresione cualquier tecla para volver al menú...");
+                    Console.ReadKey(); // Espera antes de volver a mostrar el menú
+                }
+            } while (oper != "4"); // El ciclo se repite hasta que se elija salir (opción 4)
         }
 
         private static void ProcesarNumeros()
@@ -64,19 +79,44 @@ namespace POOVIERNESSEM1
             Console.WriteLine($"El número menor es: {menor}");
         }
 
+        private static void ImprimirNumeroMayor()
+        {
+            Console.WriteLine("¿Cuántos números quieres ingresar?");
+            int cantidad = Convert.ToInt32(Console.ReadLine());
+
+            int[] numeros = new int[cantidad];
+            for (int i = 0; i < cantidad; i++)
+            {
+                Console.WriteLine($"Dame el número {i + 1}:");
+                numeros[i] = Convert.ToInt32(Console.ReadLine());
+            }
+
+            int mayor = numeros.Max();
+            Console.WriteLine($"El número mayor de la lista es: {mayor}");
+        }
+
         private static void ProcesarPrimos()
         {
             Console.WriteLine("Dame un número:");
             int N = Convert.ToInt32(Console.ReadLine());
 
-            if (EsPrimo(N))
+            MostrarNumerosPrimos(N);
+        }
+
+        // método para mostrar todos los números primos desde 1 hasta N
+        private static void MostrarNumerosPrimos(int N)
+        {
+            Console.WriteLine($"Números primos de 1 a {N}:");
+
+            for (int i = 2; i <= N; i++)
             {
-                Console.WriteLine($"{N} es un número primo.");
+                if (EsPrimo(i))
+                {
+                    Console.Write($"{i} ");
+                }
             }
-            else
-            {
-                Console.WriteLine($"{N} no es un número primo.");
-            }
+
+            Console.WriteLine(); // Salto de línea después de imprimir los números primos
         }
 
         private static bool EsPrimo(int N)
